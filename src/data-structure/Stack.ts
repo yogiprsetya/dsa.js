@@ -7,7 +7,11 @@
  */
 
 export class Stack<T extends string | number> {
+  /**
+   * @description Stack storage
+   */
   private item: Array<T>;
+
   /**
    * @description The number of elements in the stack
    * @type {number}
@@ -15,9 +19,25 @@ export class Stack<T extends string | number> {
    * */
   count: number;
 
+  /**
+   * @description Newest value
+   * @type {T}
+   * @public
+   * */
+  last: T;
+
+  /**
+   * @description Latest value
+   * @type {T}
+   * @public
+   * */
+  first: T;
+
   constructor() {
     this.item = [];
     this.count = 0;
+    this.last = this.item[this.count - 1];
+    this.first = this.item[0];
   }
 
   /**
@@ -34,6 +54,8 @@ export class Stack<T extends string | number> {
    */
   push(element: T): void {
     this.item[this.count] = element;
+    this.first = this.item[0];
+    this.last = this.item[this.count];
     this.count++;
   }
 
@@ -48,6 +70,7 @@ export class Stack<T extends string | number> {
 
     this.count--;
     this.item.length = this.count;
+    this.last = this.item[this.count - 1];
   }
 
   /**
