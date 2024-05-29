@@ -4,6 +4,7 @@
  * and the pop operation removes the most recent element from the top of the stack.
  *
  * In this chapter, I try to implement the stack with minimum built-in functions (e.g. pop(), push())
+ * Array based stack implementation.
  */
 
 export class Stack<T extends string | number> {
