@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Data structure and algorhitms",
   "scripts": {
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "typescript": "^5.4.5"
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix"
   }
 }
