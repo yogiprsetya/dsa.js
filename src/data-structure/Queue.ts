@@ -62,6 +62,14 @@ export class Queue<T extends string | number> {
     return result;
   }
 
+  peek(): T | undefined {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    return this.items[this.front];
+  }
+
   print(): Record<number, T> {
     return this.items;
   }
